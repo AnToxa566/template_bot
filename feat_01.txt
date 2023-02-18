@@ -1,4 +1,4 @@
-{symbol} {token} {position_type} 5% от депозита 
+{symbol_01} {token} {position_type} 5% от депозита 
 
 Плече: Isolated 3x-7x
 Биржа: Binance Futures

@@ -45,7 +45,7 @@ goals = []
 link = ''
 hashtag = ''
 
-symbol = ''
+symbol_01 = ''
 symbol_03 = ''
 position_type = ''
 stoploss = ''
@@ -53,7 +53,7 @@ buy_sell = ''
 buy_sell_reverse = ''
 
 def check_command(text, message):
-    global last_command, exchange, order_type, hashtag, position_type, buy_sell, buy_sell_reverse, symbol, symbol_03
+    global last_command, exchange, order_type, hashtag, position_type, buy_sell, buy_sell_reverse, symbol_01, symbol_03
     
     if text == START:
         last_command = 'None'
@@ -93,7 +93,7 @@ def check_command(text, message):
     elif text == SHORT:
         last_command = FEAT
               
-        symbol = '🔻'
+        symbol_01 = '🔻'
         symbol_03 = '🔽'
         position_type = 'SHORT'
         buy_sell = 'Продаем'
@@ -104,7 +104,7 @@ def check_command(text, message):
     elif text == LONG:
         last_command = FEAT
         
-        symbol = '🔼'
+        symbol_01 = '🚀'
         symbol_03 = '🔼'
         position_type = 'LONG'
         buy_sell = 'Покупаем'
@@ -286,7 +286,7 @@ def get_spots(file_name):
 
 
 def replace_filedata(filedata):
-    global token, exchange, order_type, open_price, average_price, goals, link, hashtag, symbol, symbol_03, position_type, buy_sell, buy_sell_reverse, stoploss
+    global token, exchange, order_type, open_price, average_price, goals, link, hashtag, symbol_01, symbol_03, position_type, buy_sell, buy_sell_reverse, stoploss
     
     filedata = filedata.replace('{token}', token)
     filedata = filedata.replace('{exchange}', exchange)
@@ -303,7 +303,7 @@ def replace_filedata(filedata):
     filedata = filedata.replace('{link}', link)
     filedata = filedata.replace('{#}', hashtag)
     
-    filedata = filedata.replace('{symbol}', symbol)
+    filedata = filedata.replace('{symbol_01}', symbol_01)
     filedata = filedata.replace('{symbol_03}', symbol_03)
     filedata = filedata.replace('{position_type}', position_type)
     filedata = filedata.replace('{buy_sell}', buy_sell)
