@@ -5,8 +5,8 @@
 {buy_sell} по Стоп-маркет {open_price}$
 Докупаем: до {average_price}$
 {buy_sell_reverse}: {goal_01}$, {goal_02}$, {goal_03}$, {goal_04}$, {goal_05}$
-Stoploss: {stoploss} (маркировка)
-❗️по достижению первой цели стоп переносим в безубыток
+Stoploss: {stoploss}$ (маркировка)
+❗️по достижению первой цели стоп переносим на цену открытия ордера
 
 {link}
 

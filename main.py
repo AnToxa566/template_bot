@@ -96,8 +96,8 @@ def check_command(text, message):
         symbol = '🔻'
         symbol_03 = '🔽'
         position_type = 'SHORT'
-        buy_sell = 'Продажа'
-        buy_sell_reverse = 'Покупка'
+        buy_sell = 'Продаем'
+        buy_sell_reverse = 'Покупаем'
         
         set_users_values(message)
         
@@ -107,8 +107,8 @@ def check_command(text, message):
         symbol = '🔼'
         symbol_03 = '🔼'
         position_type = 'LONG'
-        buy_sell = 'Покупка'
-        buy_sell_reverse = 'Продажа'
+        buy_sell = 'Покупаем'
+        buy_sell_reverse = 'Продаем'
         
         set_users_values(message)
         
