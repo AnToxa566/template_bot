@@ -13,6 +13,7 @@ SET_CHANNEL = 'Установить канал'
 SPOT = 'Спот'
 FEAT = 'Фьючерсы'
 
+MEXC = 'MEXC'
 HUOBI = 'Huobi'
 BINANCE = 'Binance'
 
@@ -69,13 +70,13 @@ def check_command(text, message):
     
     elif text == SPOT:
         last_command = CREATE_TEMPLATE
-        process_command(BINANCE, HUOBI, from_message = message, send_message = 'Выберите биржу 👇', is_back = True)  
+        process_command(BINANCE, HUOBI, MEXC, from_message = message, send_message = 'Выберите биржу 👇', is_back = True)  
         
     elif text == FEAT:
         last_command = CREATE_TEMPLATE
         process_command(SHORT, LONG, from_message = message, send_message = 'Выберите позицию 👇', is_back = True)
         
-    elif text == HUOBI or text == BINANCE:
+    elif text == HUOBI or text == BINANCE or text == MEXC:
         last_command = SPOT
         exchange = text
         
