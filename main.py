@@ -45,6 +45,7 @@ goals = []
 
 link = ''
 hashtag = ''
+marker = ''
 
 symbol_01 = ''
 symbol_03 = ''
@@ -54,7 +55,7 @@ buy_sell = ''
 buy_sell_reverse = ''
 
 def check_command(text, message):
-    global last_command, exchange, order_type, hashtag, position_type, buy_sell, buy_sell_reverse, symbol_01, symbol_03
+    global last_command, exchange, order_type, hashtag, marker, position_type, buy_sell, buy_sell_reverse, symbol_01, symbol_03
     
     if text == START:
         last_command = 'None'
@@ -81,8 +82,10 @@ def check_command(text, message):
         exchange = text
         
         if text == BINANCE:
+            marker = '🔸'
             hashtag = WITHOUT_SHITOC
         else:
+            marker = '🔹'
             hashtag = WITH_SHITOC
         
         process_command(LIMIT, MARKET, from_message = message, send_message = 'Выберите тип ордера 👇', is_back = True)
@@ -287,7 +290,7 @@ def get_spots(file_name):
 
 
 def replace_filedata(filedata):
-    global token, exchange, order_type, open_price, average_price, goals, link, hashtag, symbol_01, symbol_03, position_type, buy_sell, buy_sell_reverse, stoploss
+    global token, exchange, order_type, open_price, average_price, goals, link, hashtag, marker, symbol_01, symbol_03, position_type, buy_sell, buy_sell_reverse, stoploss
     
     filedata = filedata.replace('{token}', token)
     filedata = filedata.replace('{exchange}', exchange)
@@ -302,6 +305,7 @@ def replace_filedata(filedata):
     filedata = filedata.replace('{goal_05}', goals[4])
     
     filedata = filedata.replace('{link}', link)
+    filedata = filedata.replace('{marker}', marker)
     filedata = filedata.replace('{#}', hashtag)
     
     filedata = filedata.replace('{symbol_01}', symbol_01)
